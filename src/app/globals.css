@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 249, 250, 251;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-xl shadow-md p-4 sm:p-6 transition-all duration-200 hover:shadow-lg;
+}
+
+.stat-card {
+  @apply card flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left;
+}
+
+.stat-card > div:first-child {
+  @apply flex-shrink-0;
+}
+
+/* Mobile improvements */
+@media (max-width: 640px) {
+  .stat-card {
+    @apply py-4;
+  }
+  
+  .stat-card p.text-3xl {
+    @apply text-2xl;
+  }
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-700 hover:shadow-md active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-gray-300 hover:shadow-md active:scale-95 text-sm sm:text-base;
+}
+
+/* Tab styles */
+.tab {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 cursor-pointer;
+}
+
+.tab-active {
+  @apply bg-blue-600 text-white;
+}
+
+.tab-inactive {
+  @apply text-gray-600 hover:bg-gray-200;
+}
+
+/* Table styles */
+.table-container {
+  @apply overflow-x-auto rounded-lg border border-gray-200 -mx-4 sm:mx-0;
+}
+
+.table {
+  @apply w-full text-left min-w-[600px] sm:min-w-0;
+}
+
+/* Mobile table card view */
+@media (max-width: 640px) {
+  .mobile-card-view {
+    @apply block;
+  }
+  
+  .mobile-card-view thead {
+    @apply hidden;
+  }
+  
+  .mobile-card-view tbody tr {
+    @apply block mb-4 border border-gray-200 rounded-lg p-4 bg-white shadow-sm;
+  }
+  
+  .mobile-card-view tbody td {
+    @apply block border-0 p-0 mb-2;
+  }
+  
+  .mobile-card-view tbody td:before {
+    @apply block text-xs text-gray-500 mb-1;
+  }
+}
+
+.table th {
+  @apply bg-gray-100 px-4 py-3 font-semibold text-gray-700 border-b border-gray-200;
+}
+
+.table td {
+  @apply px-4 py-3 border-b border-gray-100;
+}
+
+.table tr:hover td {
+  @apply bg-gray-50;
+}
+
+/* Upload area */
+.upload-area {
+  @apply border-2 border-dashed border-gray-300 rounded-xl p-4 sm:p-8 text-center transition-all duration-200 cursor-pointer hover:border-blue-500 hover:bg-blue-50;
+}
+
+.upload-area.dragover {
+  @apply border-blue-500 bg-blue-50;
+}
+
+/* Responsive text */
+.text-responsive-xl {
+  @apply text-lg sm:text-xl;
+}
+
+.text-responsive-2xl {
+  @apply text-xl sm:text-2xl;
+}
+
+.text-responsive-3xl {
+  @apply text-2xl sm:text-3xl;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600;
+}
