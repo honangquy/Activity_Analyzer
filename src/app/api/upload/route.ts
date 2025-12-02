@@ -73,6 +73,3 @@ export async function GET() {
     data: analysisCache,
   });
 }
-
-// Export cache for other routes
-export { analysisCache };

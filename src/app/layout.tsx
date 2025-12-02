@@ -1,8 +1,12 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin', 'vietnamese'] });
+
+export const viewport: Viewport = {
+  themeColor: '#CC0000',
+};
 
 export const metadata: Metadata = {
   title: 'YouTube Activity Analyzer',
@@ -15,7 +19,6 @@ export const metadata: Metadata = {
     apple: '/icon.svg',
   },
   manifest: '/manifest.json',
-  themeColor: '#CC0000',
 };
 
 export default function RootLayout({
